@@ -8,7 +8,7 @@ function birtaVerkefni() {
   let listi = "";
 
   for (let i = 0; i < tasks.length; i++) {
-    listi += "<p>" + tasks[i].title + " - " + tasks[i].done + "</p>";
+    listi += "<p>" + tasks[i].title + "</p>";
   }
 
   document.getElementById("verkefnalisti").innerHTML = listi;
