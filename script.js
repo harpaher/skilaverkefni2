@@ -9,12 +9,21 @@ function birtaVerkefni() {
 
   for (let i = 0; i < tasks.length; i++) {
     if (tasks[i].done === true) {
+      listi += '<div class="verkefnakassi lokid">';
+    } else {
+      listi += '<div class="verkefnakassi">';
+    }
+
+    if (tasks[i].done === true) {
       listi += "<p>" + tasks[i].title + " - Lokið</p>";
     } else {
       listi += "<p>" + tasks[i].title + " - Ólokið</p>";
     }
+
     listi += '<button id="takki' + i + '">Breyta stöðu</button>';
     listi += '<button id="eyda' + i + '">Eyða</button>';
+
+    listi += "</div>";
   }
 
   document.getElementById("verkefnalisti").innerHTML = listi;

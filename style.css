@@ -26,6 +26,38 @@ main {
   text-align: center;
 }
 
+input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #c6c3c3;
+  color: rgb(73, 66, 66);
+  border: 1px solid #383e43;
+  border-radius: 8px;
+}
+
+button:hover {
+  cursor: pointer;
+  font-weight: bold;
+  background-color: rgb(165, 165, 164);
+}
+
+.verkefnakassi {
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.lokid {
+  background-color: #c3d1c6;
+}
+
 header,
 footer {
   background-color: #c6c3c3;
