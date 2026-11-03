@@ -17,5 +17,8 @@ function birtaVerkefni() {
 birtaVerkefni();
 document.getElementById("verkefnaForm").addEventListener("submit", function(event) {
   event.preventDefault();
-  console.log("Ýtt var á Bæta við!");
+  
+  let nyttVerkefni = document.getElementById("verkefni").value;
+
+  console.log(nyttVerkefni);
 });
