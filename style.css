@@ -12,6 +12,10 @@ main {
   padding: 20px;
 }
 
+section {
+  margin-bottom: 30px;
+}
+
 .kassar {
   display: flex;
 }
@@ -26,6 +30,11 @@ main {
   text-align: center;
 }
 
+.kassi p {
+  font-size: 21px;
+  font-weight: bold;
+}
+
 input {
   padding: 10px;
   border: 1px solid #ccc;
@@ -34,6 +43,7 @@ input {
 
 button {
   padding: 10px 20px;
+  margin: 5px;
   background-color: #c6c3c3;
   color: rgb(73, 66, 66);
   border: 1px solid #383e43;
@@ -46,6 +56,11 @@ button:hover {
   background-color: rgb(165, 165, 164);
 }
 
+.eyda {
+  background-color: #527961;
+  border-color: #292121;
+}
+
 .verkefnakassi {
   background-color: white;
   border: 1px solid #ccc;
@@ -56,6 +71,10 @@ button:hover {
 
 .lokid {
   background-color: #c3d1c6;
+}
+
+.lokid p {
+  text-decoration: line-through;
 }
 
 header,
