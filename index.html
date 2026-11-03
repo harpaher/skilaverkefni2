@@ -4,60 +4,60 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Verkefnalisti</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <header>
+      <h1>Verkefnalisti</h1>
+    </header>
 
-  <header>
-    <h1>Verkefnalisti</h1>
-  </header>
+    <main>
+      <section>
+        <h2>Tölfræði</h2>
 
-  <main>
-   <section>
-  <h2>Tölfræði</h2>
+        <div class="kassar">
+          <div class="kassi">
+            <h3>Heildarfjöldi</h3>
+            <p id="heild">0</p>
+          </div>
 
-  <div class="kassi">
-    <h3>Heildarfjöldi</h3>
-    <p id="heild">0</p>
-  </div>
+          <div class="kassi">
+            <h3>Lokið</h3>
+            <p id="lokid">0</p>
+          </div>
 
-  <div class="kassi">
-    <h3>Lokið</h3>
-    <p id="lokid">0</p>
-  </div>
+          <div class="kassi">
+            <h3>Ólokið</h3>
+            <p id="olokid">0</p>
+          </div>
+        </div>
+      </section>
 
-  <div class="kassi">
-    <h3>Ólokið</h3>
-    <p id="olokid">0</p>
-  </div>
-</section>
+      <section>
+        <h2>Bæta við verkefni</h2>
 
-<section>
-  <h2>Bæta við verkefni</h2>
+        <form id="verkefnaForm">
+          <label for="verkefni">Heiti verkefnis</label>
+          <input
+            type="text"
+            id="verkefni"
+            placeholder="Skrifaðu verkefni..."
+            required
+          />
+          <button type="submit">Bæta við</button>
+        </form>
+      </section>
+      <section>
+        <h2>Verkefnin mín</h2>
 
-  <form id="verkefnaForm">
-    <label for="verkefni">Heiti verkefnis</label>
-    <input
-      type="text"
-      id="verkefni"
-      placeholder="Skrifaðu verkefni..."
-      required
-    >
-    <button type="submit">Bæta við</button>
-  </form>
-</section>
-  </main>
-<section>
-  <h2>Verkefnin mín</h2>
+        <div id="verkefnalisti"></div>
+      </section>
+    </main>
 
-  <div id="verkefnalisti"></div>
+    <footer>
+      <p>Unnið með HTML, CSS og JavaScript.</p>
+    </footer>
 
-</section>
-
-  <footer>
-    <p>Unnið með HTML, CSS og JavaScript.</p>
-  </footer>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
