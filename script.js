@@ -8,7 +8,7 @@ function birtaVerkefni() {
   let listi = "";
 
   for (let i = 0; i < tasks.length; i++) {
-    listi += "<p>" + tasks[i].title + "</p>";
+    listi += "<p>" + tasks[i].title + " - " + tasks[i].done + "</p>";
   }
 
   document.getElementById("verkefnalisti").innerHTML = listi;
@@ -20,5 +20,15 @@ document.getElementById("verkefnaForm").addEventListener("submit", function(even
   
   let nyttVerkefni = document.getElementById("verkefni").value;
 
-  console.log(nyttVerkefni);
+   tasks.push({
+    id: tasks.length + 1,
+    title: nyttVerkefni,
+    done: false
+  });
+
+  birtaVerkefni();
+
+  document.getElementById("verkefni").value = "";
+
+  console.log(tasks);
 });
