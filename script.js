@@ -4,11 +4,18 @@ const tasks = [
   { id: 3, title: "Útbúa enskupróf", done: false },
 ];
 
-let listi = "";
+function birtaVerkefni() {
+  let listi = "";
 
-for (let i = 0; i < tasks.length; i++) {
-  listi += "<p>" + tasks[i].title + "</p>";
+  for (let i = 0; i < tasks.length; i++) {
+    listi += "<p>" + tasks[i].title + "</p>";
+  }
+
+  document.getElementById("verkefnalisti").innerHTML = listi;
 }
 
-
-document.getElementById("verkefnalisti").innerHTML = tasks[1].title;
+birtaVerkefni();
+document.getElementById("verkefnaForm").addEventListener("submit", function(event) {
+  event.preventDefault();
+  console.log("Ýtt var á Bæta við!");
+});
