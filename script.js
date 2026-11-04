@@ -22,15 +22,10 @@ function birtaVerkefni() {
   let listi = "";
 
   for (let i = 0; i < verkefni.length; i++) {
-    if (verkefni[i].done === true) {
-      listi += '<div class="verkefnakassi lokid">';
-      listi += "<p>" + verkefni[i].heiti + " - Lokið</p>";
-      listi += '<button id="takki' + i + '">Merkja sem ólokið</button>';
-    } else {
-      listi += '<div class="verkefnakassi">';
-      listi += "<p>" + verkefni[i].heiti + " - Ólokið</p>";
-      listi += '<button id="takki' + i + '">Merkja sem lokið</button>';
-    }
+    listi += '<div class="verkefnakassi' + (verkefni[i].done ? " lokid" : "") + '">';
+    listi += "<p>" + verkefni[i].heiti + (verkefni[i].done ? " - Lokið" : " - Ólokið") + "</p>";
+    listi += '<button id="takki' + i + '">' + (verkefni[i].done ? "Merkja sem ólokið" : "Merkja sem lokið") + "</button>";
+
     listi += '<button class="eyda" id="eyda' + i + '">Eyða</button>';
 
     listi += "</div>";
@@ -42,8 +37,7 @@ function birtaVerkefni() {
 
   let lokinVerkefni = verkefni.filter((v) => v.done === true);
   document.getElementById("lokid").innerHTML = lokinVerkefni.length;
-  document.getElementById("olokid").innerHTML =
-    verkefni.length - lokinVerkefni.length;
+  document.getElementById("olokid").innerHTML = verkefni.length - lokinVerkefni.length;
 
   for (let i = 0; i < verkefni.length; i++) {
     document.getElementById("takki" + i).addEventListener("click", function () {
@@ -63,39 +57,48 @@ function birtaVerkefni() {
 
 birtaVerkefni();
 
-document
-  .getElementById("verkefnaForm")
-  .addEventListener("submit", function (event) {
-    event.preventDefault();
+document.getElementById("verkefnaForm").addEventListener("submit", function (event) {
+  event.preventDefault();
 
-    let nyttVerkefni = document.getElementById("verkefni").value;
+  let nyttVerkefni = document.getElementById("verkefni").value;
 
-    verkefni.push({
-      id: teljari,
-      heiti: nyttVerkefni,
-      done: false,
-    });
-
-    teljari++;
-
-    birtaVerkefni();
-
-    document.getElementById("verkefni").value = "";
-
-    console.log(verkefni);
+  verkefni.push({
+    id: teljari,
+    heiti: nyttVerkefni,
+    done: false,
   });
+
+  teljari++;
+  birtaVerkefni();
+
+  document.getElementById("verkefni").value = "";
+  console.log(verkefni);
+});
 
 document.getElementById("vika").addEventListener("change", function () {
   localStorage.setItem("vika", document.getElementById("vika").value);
 });
 
 let vistudVika = localStorage.getItem("vika");
-
 if (vistudVika !== null) {
   document.getElementById("vika").value = vistudVika;
 }
 
 document.getElementById("hreinsaViku").addEventListener("click", function () {
+  document.getElementById("vika").value = "";
+  localStorage.removeItem("vika");
+});
+
+document.getElementById("endurstilla").addEventListener("click", function () {
+  verkefni = [
+    { id: 1, heiti: "Gera íslenskuverkefni", done: false },
+    { id: 2, heiti: "Fara á teymisfund", done: false },
+    { id: 3, heiti: "Útbúa enskupróf", done: false },
+  ];
+
+  teljari = 4;
+  birtaVerkefni();
+
   document.getElementById("vika").value = "";
   localStorage.removeItem("vika");
 });
