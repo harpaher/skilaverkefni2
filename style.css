@@ -9,7 +9,7 @@ main {
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f5f5f5;
   color: #333;
   margin: 0;
@@ -38,6 +38,11 @@ section {
 .kassi p {
   font-size: 21px;
   font-weight: bold;
+}
+
+button,
+input {
+  font-family: inherit;
 }
 
 input {
