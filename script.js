@@ -18,6 +18,14 @@ for (let i = 0; i < verkefni.length; i++) {
   }
 }
 
+function uppfaeraTolfraedi() {
+  document.getElementById("heild").innerHTML = verkefni.length;
+
+  let lokinVerkefni = verkefni.filter((v) => v.done === true);
+  document.getElementById("lokid").innerHTML = lokinVerkefni.length;
+  document.getElementById("olokid").innerHTML = verkefni.length - lokinVerkefni.length;
+}
+
 function birtaVerkefni() {
   let listi = "";
 
@@ -33,11 +41,7 @@ function birtaVerkefni() {
 
   document.getElementById("verkefnalisti").innerHTML = listi;
   localStorage.setItem("verkefni", JSON.stringify(verkefni));
-  document.getElementById("heild").innerHTML = verkefni.length;
-
-  let lokinVerkefni = verkefni.filter((v) => v.done === true);
-  document.getElementById("lokid").innerHTML = lokinVerkefni.length;
-  document.getElementById("olokid").innerHTML = verkefni.length - lokinVerkefni.length;
+  uppfaeraTolfraedi();
 
   for (let i = 0; i < verkefni.length; i++) {
     document.getElementById("takki" + i).addEventListener("click", function () {
