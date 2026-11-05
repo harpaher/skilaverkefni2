@@ -60,7 +60,11 @@ birtaVerkefni();
 document.getElementById("verkefnaForm").addEventListener("submit", function (event) {
   event.preventDefault();
 
-  let nyttVerkefni = document.getElementById("verkefni").value;
+  let nyttVerkefni = document.getElementById("verkefni").value.trim();
+
+  if (nyttVerkefni === "") {
+    return;
+  }
 
   verkefni.push({
     id: teljari,
