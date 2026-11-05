@@ -90,15 +90,17 @@ document.getElementById("hreinsaViku").addEventListener("click", function () {
 });
 
 document.getElementById("endurstilla").addEventListener("click", function () {
-  verkefni = [
-    { id: 1, heiti: "Gera íslenskuverkefni", done: false },
-    { id: 2, heiti: "Fara á teymisfund", done: false },
-    { id: 3, heiti: "Útbúa enskupróf", done: false },
-  ];
+  if (confirm("Ertu viss um að þú viljir endurstilla verkefnalistann?")) {
+    verkefni = [
+      { id: 1, heiti: "Gera íslenskuverkefni", done: false },
+      { id: 2, heiti: "Fara á teymisfund", done: false },
+      { id: 3, heiti: "Útbúa enskupróf", done: false },
+    ];
 
-  teljari = 4;
-  birtaVerkefni();
+    teljari = 4;
+    birtaVerkefni();
 
-  document.getElementById("vika").value = "";
-  localStorage.removeItem("vika");
+    document.getElementById("vika").value = "";
+    localStorage.removeItem("vika");
+  }
 });
